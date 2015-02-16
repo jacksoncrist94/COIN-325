@@ -27,6 +27,14 @@ public class BookShelf{
 		mBook.setYear();
 	}
 	
+        /*
+	 * DPW: This function simply returns the book passed in.  I do not see
+	 * the usefulness of this function.
+	 * One getter might be:
+	 * public Book getBook1() {
+	 *     return book1;
+	 * }
+	 */
 	public Book getBook(Book mBook){
 		return mBook;
 	}
