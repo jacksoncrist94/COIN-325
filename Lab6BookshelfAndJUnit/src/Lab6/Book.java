@@ -18,6 +18,13 @@ public class Book{
 		year = mYear;
 	}
 	
+        /* DPW: I see that you had the setter get the input from keyboard input.
+	 * In general a setter is passed int eh value to set.  For example:
+	 * public void setTitle(String title) {
+	 *     this.title = title;
+	 * }
+	 * Please ensure future setters are written this way.
+         */
 	public void setTitle(){
 		title = scan.nextLine();
 	}
