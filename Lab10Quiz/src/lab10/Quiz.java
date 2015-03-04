@@ -36,7 +36,7 @@ public class Quiz{
 		}
 		
 		for(int i = 0; i < questions.length; i++){
-			System.out.println(questions[i].getQuestion() + " Student response: " + questions[i].getResponse() + " Instructor's answer: " + questions[i].getAnswer());
+			System.out.println(questions[i].getQuestion() + " Student response: " + questions[i].getResponse() + "; Instructor's answer: " + questions[i].getAnswer());
 		}
 		
 		System.out.println("Points received: " + points + " out of 25");
