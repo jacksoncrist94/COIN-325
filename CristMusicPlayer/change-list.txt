@@ -1,0 +1,2 @@
+removed the sort, playlist, and playback GUI elements
+
