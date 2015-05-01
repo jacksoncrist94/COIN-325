@@ -2,57 +2,40 @@ package musicPlayer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.LinkedList;
+
 
 public class TrackList{
+	LinkedList<Track> tracklist = new LinkedList<Track>();
 	
-	Node head, tail;
 	
 	public TrackList() throws FileNotFoundException{
 		
-		File file = new File("C:/Users/Jackson Crist/COIN-325/CristMusicPlayer/src/musicPlayer/music");
-		Scanner scan = new Scanner(file);
-		scan.next();
-		
-		while(scan.hasNext()){
-				
-			Node node = new Node();
-			node.value = new Track(scan.next());
+		File folder = new File("C:/Users/Jackson Crist/COIN-325/CristMusicPlayer/src/musicPlayer/music");
 			
 			
-			if (head == null && tail == null){
-				node.next = null;
-				head = tail = node;
-			} else {
-				// We assume both head and tail are not null.
-				if (head != null && tail != null){
-					node.next = null;
-					tail.next = node;
-					tail = node;
-				} else {
-					System.err.println("Invalid state only one is null: head, tail");
-				}
+			File[] listOfFiles = folder.listFiles();
+
+			for (File file : listOfFiles) {
+			    if (file.isFile()) {
+			        
+			        tracklist.add(new Track(file.getName()));
+			        
+			        
+			    }
 			}
 			
-			
-			
 		}
 		
-		scan.close();
-	}
+		
+	
 	
 	public Track get(int index){
-		Node here = new Node();
-		here = head;
-		for(int i = 1; i < index; i++){	
-			here = here.next;
-		}
-		return here.value;
+		return tracklist.get(index);
 	}
 	
-	class Node{
-		Track value;
-		Node next;
+	public Track getLast(){
+		return tracklist.getLast();
 	}
 	
 }

@@ -1,2 +1,2 @@
-removed the sort, playlist, and playback GUI elements
+Updated the program, it is now functional! -_- I definitely would need to update the UML to condense everything together, and show how each class borrows from the others.
 
